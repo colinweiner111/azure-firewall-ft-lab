@@ -1,0 +1,2 @@
+# Compiled Bicep artifacts — deploy from source .bicep files, not compiled JSON
+infra/*.json
