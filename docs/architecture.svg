@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 555" width="1000" height="555"
+     font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="0.7" fill="#25253D"/>
+    </pattern>
+    <marker id="aw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#BBBBBB"/>
+    </marker>
+    <marker id="aw-r" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M10,0 L0,5 L10,10 z" fill="#BBBBBB"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="555" fill="#16162A"/>
+  <rect width="1000" height="555" fill="url(#dots)"/>
+
+  <text x="500" y="22" font-size="13" font-weight="600" text-anchor="middle" fill="#D0D0E8">Azure Firewall Forced Tunneling Lab</text>
+
+  <!-- Internet cloud -->
+  <g transform="translate(500,63)">
+    <ellipse cx="0" cy="10" rx="44" ry="16" fill="#16162A"/>
+    <ellipse cx="-22" cy="2" rx="19" ry="13" fill="#16162A"/>
+    <ellipse cx="20" cy="0" rx="17" ry="12" fill="#16162A"/>
+    <ellipse cx="0" cy="10" rx="44" ry="16" fill="none" stroke="#4D7FAA" stroke-width="1.5"/>
+    <ellipse cx="-22" cy="2" rx="19" ry="13" fill="none" stroke="#4D7FAA" stroke-width="1.5"/>
+    <ellipse cx="20" cy="0" rx="17" ry="12" fill="none" stroke="#4D7FAA" stroke-width="1.5"/>
+    <text x="0" y="14" font-size="10" font-weight="600" text-anchor="middle" fill="#6AAAD0">Internet</text>
+  </g>
+
+  <!-- ═══ ON-PREM VNET (20, 205, 195, 158) ═══ -->
+  <rect x="20" y="205" width="195" height="158" rx="3" fill="none" stroke="#E91E8C" stroke-width="2"/>
+  <text x="117" y="199" font-size="11" font-weight="700" text-anchor="middle" fill="#F0F0F0">On-prem</text>
+
+  <!-- FRR VM laptop -->
+  <g transform="translate(70,262)">
+    <rect x="-16" y="-13" width="32" height="20" rx="2" fill="none" stroke="#33DD55" stroke-width="1.8"/>
+    <rect x="-12" y="-9" width="24" height="13" fill="#33DD55" opacity="0.18"/>
+    <rect x="-18" y="7" width="36" height="5" rx="1" fill="#33DD55" opacity="0.65"/>
+    <rect x="-6" y="8" width="12" height="3" fill="#16162A"/>
+  </g>
+  <text x="70" y="286" font-size="8.5" text-anchor="middle" fill="#CCCCCC">10.100.0.10</text>
+  <text x="70" y="297" font-size="7.5" text-anchor="middle" fill="#888888">FRR VM</text>
+
+  <!-- strongSwan padlock (orange) -->
+  <g transform="translate(158,259)">
+    <path d="M-13,2 a13,13 0 0,1 26,0" fill="none" stroke="#E87722" stroke-width="2.2" stroke-linecap="round"/>
+    <rect x="-15" y="2" width="30" height="21" rx="3" fill="none" stroke="#E87722" stroke-width="1.8"/>
+    <circle cx="0" cy="12" r="4" fill="none" stroke="#E87722" stroke-width="1.5"/>
+    <rect x="-1.5" y="13" width="3" height="6" fill="#E87722" opacity="0.8"/>
+  </g>
+  <text x="158" y="290" font-size="8.5" text-anchor="middle" fill="#CCCCCC">strongSwan</text>
+  <text x="158" y="301" font-size="7.5" text-anchor="middle" fill="#888888">BGP 65001</text>
+  <text x="117" y="350" font-size="8.5" text-anchor="middle" fill="#888888">10.100.0.0/24</text>
+
+  <!-- ═══ HUB VNET (312, 148, 310, 188) ═══ -->
+  <rect x="312" y="148" width="310" height="188" rx="3" fill="none" stroke="#E91E8C" stroke-width="2"/>
+  <text x="467" y="142" font-size="11" font-weight="700" text-anchor="middle" fill="#F0F0F0">Hub</text>
+
+  <!-- AZFW brick icon -->
+  <g transform="translate(383,228)">
+    <rect x="-16" y="-14" width="11" height="8" rx="1" fill="#CC2222"/>
+    <rect x="-3"  y="-14" width="11" height="8" rx="1" fill="#CC2222"/>
+    <rect x="10"  y="-14" width="8"  height="8" rx="1" fill="#CC2222"/>
+    <rect x="-20" y="-4"  width="11" height="8" rx="1" fill="#CC2222"/>
+    <rect x="-7"  y="-4"  width="11" height="8" rx="1" fill="#CC2222"/>
+    <rect x="6"   y="-4"  width="11" height="8" rx="1" fill="#CC2222"/>
+    <rect x="-16" y="6"   width="11" height="8" rx="1" fill="#CC2222"/>
+    <rect x="-3"  y="6"   width="11" height="8" rx="1" fill="#CC2222"/>
+    <rect x="10"  y="6"   width="8"  height="8" rx="1" fill="#CC2222"/>
+  </g>
+  <text x="383" y="252" font-size="8.5" font-weight="700" text-anchor="middle" fill="#FF7070">AZFW  10.0.0.4</text>
+  <text x="383" y="263" font-size="7" text-anchor="middle" fill="#999999">AzureFirewallSubnet  10.0.0.0/26</text>
+  <text x="383" y="273" font-size="7" text-anchor="middle" fill="#CC6644">rt-corp-fw-data</text>
+  <text x="383" y="283" font-size="6.5" text-anchor="middle" fill="#777777">+Mgmt 10.0.0.64/26 · rt-corp-fw-mgmt</text>
+
+  <!-- VNG padlock (green) -->
+  <g transform="translate(467,225)">
+    <path d="M-13,2 a13,13 0 0,1 26,0" fill="none" stroke="#00BB55" stroke-width="2.2" stroke-linecap="round"/>
+    <rect x="-15" y="2" width="30" height="22" rx="3" fill="none" stroke="#00BB55" stroke-width="1.8"/>
+    <circle cx="0" cy="13" r="4.5" fill="none" stroke="#00BB55" stroke-width="1.5"/>
+    <rect x="-1.5" y="14" width="3" height="6" fill="#00BB55" opacity="0.8"/>
+  </g>
+  <text x="467" y="256" font-size="8.5" font-weight="700" text-anchor="middle" fill="#44EE88">VNG  BGP 65515</text>
+  <text x="467" y="267" font-size="7" text-anchor="middle" fill="#999999">GatewaySubnet  10.0.0.192/27</text>
+  <text x="467" y="277" font-size="7" text-anchor="middle" fill="#2EA860">rt-corp-gateway</text>
+
+  <!-- Bastion tower (blue) -->
+  <g transform="translate(553,225)">
+    <rect x="-8" y="-16" width="16" height="20" rx="1" fill="none" stroke="#00B4D8" stroke-width="1.5"/>
+    <rect x="-13" y="-21" width="5" height="6" rx="1" fill="none" stroke="#00B4D8" stroke-width="1.5"/>
+    <rect x="-3"  y="-21" width="5" height="6" rx="1" fill="none" stroke="#00B4D8" stroke-width="1.5"/>
+    <rect x="7"   y="-21" width="5" height="6" rx="1" fill="none" stroke="#00B4D8" stroke-width="1.5"/>
+  </g>
+  <text x="553" y="251" font-size="8.5" font-weight="700" text-anchor="middle" fill="#00C4E8">Bastion</text>
+  <text x="553" y="262" font-size="7" text-anchor="middle" fill="#999999">AzureBastionSubnet</text>
+  <text x="553" y="272" font-size="7" text-anchor="middle" fill="#888888">Basic SKU</text>
+
+  <text x="467" y="325" font-size="8.5" text-anchor="middle" fill="#888888">vnet-corp-hub  ·  10.0.0.0/24</text>
+
+  <!-- ═══ SPOKE 01 (720, 62, 210, 148) ═══ -->
+  <rect x="720" y="62" width="210" height="148" rx="3" fill="none" stroke="#E91E8C" stroke-width="2"/>
+  <text x="825" y="56" font-size="11" font-weight="700" text-anchor="middle" fill="#F0F0F0">Spoke 01</text>
+  <g transform="translate(825,123)">
+    <rect x="-16" y="-13" width="32" height="20" rx="2" fill="none" stroke="#33DD55" stroke-width="1.8"/>
+    <rect x="-12" y="-9" width="24" height="13" fill="#33DD55" opacity="0.18"/>
+    <rect x="-18" y="7" width="36" height="5" rx="1" fill="#33DD55" opacity="0.65"/>
+    <rect x="-6" y="8" width="12" height="3" fill="#16162A"/>
+  </g>
+  <text x="825" y="153" font-size="8.5" text-anchor="middle" fill="#CCCCCC">10.1.0.4</text>
+  <text x="825" y="200" font-size="8.5" text-anchor="middle" fill="#888888">10.1.0.0/24</text>
+
+  <!-- ═══ rt-corp-spokes (720, 236, 210, 60) ═══ -->
+  <rect x="720" y="236" width="210" height="60" rx="3"
+        fill="rgba(233,30,140,0.07)" stroke="#E91E8C" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="825" y="252" font-size="8" font-weight="700" text-anchor="middle" fill="#FF88BB">rt-corp-spokes</text>
+  <text x="825" y="264" font-size="7" text-anchor="middle" fill="#888888">both spoke subnets</text>
+  <line x1="728" y1="272" x2="922" y2="272" stroke="#E91E8C" stroke-width="0.6" opacity="0.4"/>
+  <text x="825" y="284" font-size="7.5" text-anchor="middle" fill="#CCCCCC">0.0.0.0/0  →  10.0.0.4</text>
+
+  <!-- ═══ SPOKE 02 (720, 322, 210, 148) ═══ -->
+  <rect x="720" y="322" width="210" height="148" rx="3" fill="none" stroke="#E91E8C" stroke-width="2"/>
+  <text x="825" y="316" font-size="11" font-weight="700" text-anchor="middle" fill="#F0F0F0">Spoke 02</text>
+  <g transform="translate(825,383)">
+    <rect x="-16" y="-13" width="32" height="20" rx="2" fill="none" stroke="#33DD55" stroke-width="1.8"/>
+    <rect x="-12" y="-9" width="24" height="13" fill="#33DD55" opacity="0.18"/>
+    <rect x="-18" y="7" width="36" height="5" rx="1" fill="#33DD55" opacity="0.65"/>
+    <rect x="-6" y="8" width="12" height="3" fill="#16162A"/>
+  </g>
+  <text x="825" y="413" font-size="8.5" text-anchor="middle" fill="#CCCCCC">10.2.0.4</text>
+  <text x="825" y="460" font-size="8.5" text-anchor="middle" fill="#888888">10.2.0.0/24</text>
+
+  <!-- ═══ CONNECTIONS ═══ -->
+
+  <!-- Internet ↕ Hub AZFW (dashed) -->
+  <line x1="478" y1="79" x2="400" y2="148"
+        stroke="#BBBBBB" stroke-width="1.3" stroke-dasharray="5,3"
+        marker-end="url(#aw)" marker-start="url(#aw-r)"/>
+
+  <!-- On-prem ↔ Hub S2S -->
+  <line x1="215" y1="265" x2="312" y2="255"
+        stroke="#CCCCCC" stroke-width="1.5"
+        marker-end="url(#aw)" marker-start="url(#aw-r)"/>
+  <text x="263" y="249" font-size="9" text-anchor="middle" fill="#DDDDDD">S2S/ER</text>
+  <text x="263" y="260" font-size="7.5" text-anchor="middle" fill="#888888">BGP 0.0.0.0/0</text>
+
+  <!-- Hub right (622) → junction (680, 242) → spine y=136 to y=396 -->
+  <line x1="622" y1="242" x2="680" y2="242" stroke="#CCCCCC" stroke-width="1.2"/>
+  <line x1="680" y1="136" x2="680" y2="396" stroke="#CCCCCC" stroke-width="1.2"/>
+
+  <!-- Peering node → Spoke 01 -->
+  <circle cx="680" cy="136" r="7" fill="#E91E8C" opacity="0.18" stroke="#E91E8C" stroke-width="1.5"/>
+  <circle cx="680" cy="136" r="3" fill="#E91E8C" opacity="0.65"/>
+  <line x1="687" y1="136" x2="720" y2="136" stroke="#CCCCCC" stroke-width="1.2" marker-end="url(#aw)"/>
+  <text x="700" y="126" font-size="8" text-anchor="middle" fill="#DDDDDD">Peering</text>
+
+  <!-- Peering node → Spoke 02 -->
+  <circle cx="680" cy="396" r="7" fill="#E91E8C" opacity="0.18" stroke="#E91E8C" stroke-width="1.5"/>
+  <circle cx="680" cy="396" r="3" fill="#E91E8C" opacity="0.65"/>
+  <line x1="687" y1="396" x2="720" y2="396" stroke="#CCCCCC" stroke-width="1.2" marker-end="url(#aw)"/>
+  <text x="700" y="412" font-size="8" text-anchor="middle" fill="#DDDDDD">Peering</text>
+
+  <!-- rt-corp-spokes connectors -->
+  <line x1="825" y1="210" x2="825" y2="236" stroke="#E91E8C" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="825" y1="296" x2="825" y2="322" stroke="#E91E8C" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+
+</svg>
